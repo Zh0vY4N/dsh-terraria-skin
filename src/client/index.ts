@@ -94,8 +94,7 @@ const WALL = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAYEBQUFBAYFBQUHBgYHCQ8KCQgICRMNDg
 
 const CSS = `
 html{background:#0a0e18!important}
-html body{${lr}}
-html body[data-ds-dark-theme]{${dr}}
+html body{${dr}}
 html body{background-color:#14161d!important;background-image:linear-gradient(180deg,rgba(12,14,20,.14),rgba(12,14,20,.24)),url("data:image/jpeg;base64,${WALL}")!important;background-size:cover!important;background-position:center 22%!important;background-repeat:no-repeat!important;background-attachment:fixed!important}
 html>body>div:first-child{background-color:rgba(0,0,0,0)!important;background-image:none!important}
 .dts-root{position:fixed;inset:0;pointer-events:none;z-index:2147483000;overflow:hidden}
@@ -291,6 +290,12 @@ export function apply(ctx: { effect?: (cb: () => (() => void) | void, label?: st
   styleEl.textContent = CSS
   document.head.appendChild(styleEl)
 
+  // Terraria skin is a DARK skin: force the GUI's dark theme marker on body so
+  // both our alias tokens and the shell's own [data-ds-dark-theme] styles pick
+  // the dark branch. Remember the previous state so teardown restores it.
+  const wasDark = document.body.hasAttribute('data-ds-dark-theme')
+  document.body.setAttribute('data-ds-dark-theme', '')
+
   const host = document.createElement('div')
   host.setAttribute('data-dsh-terraria-skin', 'root')
   document.body.appendChild(host)
@@ -302,6 +307,7 @@ export function apply(ctx: { effect?: (cb: () => (() => void) | void, label?: st
       root.unmount()
       host.remove()
       styleEl.remove()
+      if (!wasDark) document.body.removeAttribute('data-ds-dark-theme')
     }, 'terraria-skin: teardown')
   }
 }
