@@ -1,0 +1,61 @@
+{
+    "name":  "dsh-terraria-skin",
+    "version":  "0.2.0",
+    "description":  "Terraria-themed skin plugin for the DSH web GUI: readable global palette (light parchment / dark cavern), embedded Shimmer wallpaper behind translucent panels, and a slime ecosystem (11 original in-game species, sky respawn on kill, graduated coin drops + Gel, drag / right-click). Static plugin with full DOM access (body-mounted root + global stylesheet), packaged for dsh profiles and GitHub/npm publishing.",
+    "type":  "module",
+    "main":  "lib/index.js",
+    "exports":  {
+                    ".":  "./lib/index.js",
+                    "./client":  "./lib/client.js",
+                    "./src/*":  "./src/*",
+                    "./package.json":  "./package.json"
+                },
+    "files":  [
+                  "lib",
+                  "src",
+                  "assets",
+                  "scripts",
+                  "cordis.patch.yml",
+                  "README.md",
+                  "LICENSE"
+              ],
+    "license":  "MIT",
+    "engines":  {
+                    "node":  "^22.19.0 || \u003e=24.0.0"
+                },
+    "dsh":  {
+                "bundle":  {
+                               "patch":  "./cordis.patch.yml"
+                           },
+                "client":  {
+                               "inject":  [
+                                              "@deepseek-ai/dsh-client-runtime"
+                                          ],
+                               "platform":  "web"
+                           }
+            },
+    "peerDependencies":  {
+                             "react":  "^18.2.0",
+                             "react-dom":  "^18.2.0"
+                         },
+    "devDependencies":  {
+                            "@deepseek-ai/cordis":  "^4.0.1",
+                            "@deepseek-ai/dsh-client-runtime":  "^0.1.0-rc.6",
+                            "@types/node":  "^22.20.0",
+                            "@types/react":  "~18.3.1",
+                            "@types/react-dom":  "~18.3.0",
+                            "react":  "^18.3.1",
+                            "react-dom":  "^18.3.1",
+                            "tsdown":  "^0.22.2",
+                            "typescript":  "~5.7.2"
+                        },
+    "repository":  {
+                       "type":  "git",
+                       "url":  "https://github.com/\u003cyour-name\u003e/dsh-terraria-skin.git"
+                   },
+    "scripts":  {
+                    "build":  "tsdown",
+                    "watch":  "tsdown --watch",
+                    "typecheck":  "tsc --noEmit"
+                }
+}
