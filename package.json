@@ -51,7 +51,7 @@
                         },
     "repository":  {
                        "type":  "git",
-                       "url":  "https://github.com/\u003cyour-name\u003e/dsh-terraria-skin.git"
+                       "url":  "https://github.com/Zh0vY4N/dsh-terraria-skin.git"
                    },
     "scripts":  {
                     "build":  "tsdown",
