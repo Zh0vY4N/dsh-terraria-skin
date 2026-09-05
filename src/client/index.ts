@@ -94,7 +94,7 @@ const WALL = '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAYEBQUFBAYFBQUHBgYHCQ8KCQgICRMNDg
 
 const CSS = `
 html{background:#0a0e18!important}
-html body{${dr}}
+html body, html body[data-ds-dark-theme]{${dr}}
 html body{background-color:#14161d!important;background-image:linear-gradient(180deg,rgba(12,14,20,.14),rgba(12,14,20,.24)),url("data:image/jpeg;base64,${WALL}")!important;background-size:cover!important;background-position:center 22%!important;background-repeat:no-repeat!important;background-attachment:fixed!important}
 html>body>div:first-child{background-color:rgba(0,0,0,0)!important;background-image:none!important}
 .dts-root{position:fixed;inset:0;pointer-events:none;z-index:2147483000;overflow:hidden}
