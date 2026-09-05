@@ -45,11 +45,12 @@ const T = {
 let lr = ''
 let dr = ''
 for (const k in T) { lr += k + ':' + T[k].l + ';'; dr += k + ':' + T[k].d + ';' }
-// translucent surfaces so the wallpaper glows through (dark)
-const DG = [['#0a0f19', 'rgba(7,10,17,.78)'], ['#131a2a', 'rgba(19,26,42,.85)'], ['#1a2336', 'rgba(26,35,54,.89)'], ['#222d47', 'rgba(34,45,71,.93)'], ['#28324e', 'rgba(40,50,78,.94)'], ['#101623', 'rgba(16,22,35,.86)'], ['#1d2740', 'rgba(29,39,64,.89)'], ['#182138', 'rgba(24,33,56,.89)'], ['#1c2740', 'rgba(28,39,64,.89)'], ['#0d1424', 'rgba(13,20,36,.91)'], ['#131b2e', 'rgba(19,27,46,.91)'], ['#101828', 'rgba(16,24,40,.91)'], ['#182036', 'rgba(24,32,54,.93)'], ['#121829', 'rgba(18,24,41,.93)'], ['#1c2640', 'rgba(28,38,64,.9)'], ['#141d33', 'rgba(20,29,51,.88)']]
+// translucent surfaces so the wallpaper glows through (dark) — alphas kept low
+// enough that the body wallpaper stays visible through the GUI stack
+const DG = [['#0a0f19', 'rgba(7,10,17,.55)'], ['#131a2a', 'rgba(19,26,42,.62)'], ['#1a2336', 'rgba(26,35,54,.66)'], ['#222d47', 'rgba(34,45,71,.72)'], ['#28324e', 'rgba(40,50,78,.75)'], ['#101623', 'rgba(16,22,35,.62)'], ['#1d2740', 'rgba(29,39,64,.68)'], ['#182138', 'rgba(24,33,56,.68)'], ['#1c2740', 'rgba(28,39,64,.68)'], ['#0d1424', 'rgba(13,20,36,.72)'], ['#131b2e', 'rgba(19,27,46,.72)'], ['#101828', 'rgba(16,24,40,.72)'], ['#182036', 'rgba(24,32,54,.75)'], ['#121829', 'rgba(18,24,41,.75)'], ['#1c2640', 'rgba(28,38,64,.7)'], ['#141d33', 'rgba(20,29,51,.68)']]
 for (const d of DG) dr = dr.split(d[0]).join(d[1])
 // translucent surfaces (light) — the wallpaper is visible in BOTH themes
-const LG = [['#f2e8cc', 'rgba(240,232,206,.78)'], ['#f9f1dc', 'rgba(248,241,220,.86)'], ['#f1e6c8', 'rgba(241,230,198,.89)'], ['#e9dcba', 'rgba(233,220,186,.92)'], ['#fcf5e2', 'rgba(252,245,228,.94)'], ['#e4d6b2', 'rgba(228,214,178,.9)'], ['#eadfc0', 'rgba(234,223,192,.9)'], ['#e7dab5', 'rgba(231,218,181,.84)'], ['#efe3bd', 'rgba(239,227,189,.88)'], ['#fffaf0', 'rgba(255,250,240,.9)'], ['#f6edd6', 'rgba(246,237,212,.9)'], ['#fff9e8', 'rgba(255,249,232,.9)'], ['#ecdfc0', 'rgba(236,223,192,.9)'], ['#f2e8ca', 'rgba(242,232,202,.9)'], ['#e9ddb8', 'rgba(233,221,184,.92)'], ['#e4d6b0', 'rgba(228,214,176,.92)'], ['#e6d8ae', 'rgba(230,216,174,.92)'], ['#e3d6b0', 'rgba(227,214,176,.92)'], ['#ecdfb8', 'rgba(236,223,184,.92)'], ['#e2d4ab', 'rgba(226,212,171,.92)'], ['#f6efd8', 'rgba(246,239,216,.94)'], ['#ede2bd', 'rgba(237,226,189,.92)']]
+const LG = [['#f2e8cc', 'rgba(240,232,206,.68)'], ['#f9f1dc', 'rgba(248,241,220,.74)'], ['#f1e6c8', 'rgba(241,230,198,.76)'], ['#e9dcba', 'rgba(233,220,186,.8)'], ['#fcf5e2', 'rgba(252,245,228,.82)'], ['#e4d6b2', 'rgba(228,214,178,.78)'], ['#eadfc0', 'rgba(234,223,192,.78)'], ['#e7dab5', 'rgba(231,218,181,.72)'], ['#efe3bd', 'rgba(239,227,189,.75)'], ['#fffaf0', 'rgba(255,250,240,.8)'], ['#f6edd6', 'rgba(246,237,212,.8)'], ['#fff9e8', 'rgba(255,249,232,.8)'], ['#ecdfc0', 'rgba(236,223,192,.8)'], ['#f2e8ca', 'rgba(242,232,202,.8)'], ['#e9ddb8', 'rgba(233,221,184,.82)'], ['#e4d6b0', 'rgba(228,214,176,.82)'], ['#e6d8ae', 'rgba(230,216,174,.82)'], ['#e3d6b0', 'rgba(227,214,176,.82)'], ['#ecdfb8', 'rgba(236,223,184,.82)'], ['#e2d4ab', 'rgba(226,212,171,.82)'], ['#f6efd8', 'rgba(246,239,216,.84)'], ['#ede2bd', 'rgba(237,226,189,.82)']]
 for (const l of LG) lr = lr.split(l[0]).join(l[1])
 
 /* ------------------------------------------------------------------ */
@@ -73,6 +74,8 @@ const CU = P + 'iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAATElEQVR42mNAB6Fy
 const SI = P + 'iVBORw0KGgoAAAANSUhEUgAAAAwAAAAOCAYAAAAbvf3sAAAAUklEQVR42mNAB0pm9v+RMbo8uRoQCheuWQvGbz9+BmOYOPkaYAL9c+aCcWx6Ngjj1Ei5BjffABBG10i5BpgCiAYEhhlEgQYoQNeIUyHJGmiflgCJowD0XY0MQQAAAABJRU5ErkJggg=='
 const GO = P + 'iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQCAYAAAAiYZ4HAAAAYElEQVR42mNABzHOHP+RMbo8uRoQCs9s9QDj/z+3gzFMnHwNProc/4EYrnBKnQQI49RINQ1whe9uVYEw5RrgCqtiuEAYphBuEEQd9TQgMOUaoABdI06FZGrA1IihkGwNAEX1OViHhGMZAAAAAElFTkSuQmCC'
 const GEL = P + 'iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAYAAAAmL5yKAAAAVUlEQVR42mNAB6pWLf/xYXT1lBqAqVEveD8KNkl6jIJh6mhtAEKjVdF/ZIxhEOUGwBj6IfuBGKoRE+M3AGEz5QbgcglBv0M1km4AfoMwMfUNGPi8AACcMm5ARZ+V/wAAAABJRU5ErkJggg=='
+/* King Slime — kill-count emblem (terraria.wiki.gg original sprite). */
+const KING = P + 'iVBORw0KGgoAAAANSUhEUgAAAKIAAACQCAMAAAC8nkCPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADJUExURQAAACAsREh4306I/1OW/1mk/lKX6laZ7Fyh/Fug/Vyj/1ui/Fui+mCV8ViQ72SX81OO7VGM7EyK63ml+miZ82yl8laY64mw84Cr8X2g8oem9FGM61+K8VSW91mb+1eW/VeU/1aV/1aV/FWW/FWW/lWV/1aV/mWO83ea+kyA7Eh961SE70+B7SteppLq/x05dhIWTj2T2U+L7Ieu/z3ZVRJOSB12ULX/kv+xknYcN6YqMvFtZE4SKMqhIeTESv/idaWCBWtVAD0wAGMIga0AAAABdFJOUwBA5thmAAAEUklEQVR42uzVS47DIAwG4PZA5LFoxSOAf9//UBOPhZxMp5tJZwWWKoJw6i9yILdPB3D7cPRHBIiAQbwKrFWQg3iFWKsgB/Fam0sBSiECBvGvRAHqOIiD+N8I5uOc9zgf20q04/uYZXOgT6IhmK1UzkRtDuRsxJyBlkWU8/EufYB+ibUqyYoDzAa27WIoZuDnXbX2TVSSFdc57yGrQmQWol4xt6xBPG6P34hSVAvLCNi1/F6JQM7M/RKJXokazKXUytxm0vQ2eyUS9Ue00Dbq1Rlgm0VXBAycc5iP/zGI+umz8rpBBCk/CZkRHYn6GRzEEFrDGs+IiiMKe2wbkc6VaGGHUAh9EkOIsZV5D/Q+pRjfI9vjxRhCn0TvldiQ1nYDhu8wZGutAZXofZ/EbdNGz3PZg1kDOANj9D7GMxJo2ZI3zwAg630SUxLgNDl3PqJlzDmElEIQoIwpbRugGZqj9zg3TYJMqTeiIYFlWVfnpBjwfD4e0kwlyotgRGk6oGtEkqmvhHPruiyAAPsk3u/81Y699SQSBGEYXoY9eAQZVlbA87LroiYkKnpFsvL/f5T1UTP5MvSFHcqJqR7ehMzx4kkq0+mwBHI2U+DLiyIBBlEHXCUCiDcVuVjMZgAul61WE4ktKctA1G3V6+t8/vz89ASiLi06aAD1CKI+0TdB1IUbxCxrSc0igqcpUje0c6ncyhKJFIhnJbIKbEuZBGT6RI6YLSVFIvzVVEViO6ZALu3/i4QnfV0FJsedNrHKaxdxCwEkEogkSGkduFgoTnmMzFSJHDF5jFBiSyQCkBvaABcwW5IHon3ELEyZ6yksJo7bK9EOfJ/wbS0D0hHRDgxxYQakA6IJSFxkAdIVsX6gAemEWD/QgvRJtAP/FF1dXV+fne3u7uzYkH6JBMYTf0uTCXCTyV/p8vLi4vx8b29//+BgUyKRDohGYMTHYhg1kFtiQ4g1APOi76ssRCKbQiSw38/zw8OO9EMiMg7onUignchRA2khEumTSGA8cTxWYl/6KR0fDyQg44EkIj9EAi1EAEejPActlwAdj39JJyeDwWZAjjo9IguJwyFwDw+PjyDiTgwRwC2xShyNSByuAjEGR6BPIoEhMR6ZS51OXsRFHM/icASSqMgUiaxK7PUEKfUk4LrdoyMQIyLQNdGCJLHbzbUCCKoNmD4xRJYbCSUagI0hMhKBAhCfCcccC/RPtCDJxHjxK5edeN6WSCaWbhI34RHolWhH3t7e3YGpxBjelhgAKwEZywqBPok2JMd8fz+d6lHP2kGpEr+YkCGQ50TagH6JLIbH1u/YgP6JLGbI/6SbGyXpPb02AD0RPwg5XcVBn57y2gb0RbQiUfXKAHRGtCPtkRcC0yGyuni+ifFIVj+PwBSJrAacV6IJierhEZg+kRlwCRHtSGaABUCfRDvSHoFeiUR+PtA70Y60A50TiZQ+gwegd6KdaeelRSSz/kqeY+IbLY6l6nrrdUYAAAAASUVORK5CYII='
 
 const SPECIES = [
   { i: 0, n: '绿史莱姆 Green Slime', min: 2, max: 4, gel: 0.9 },
@@ -110,12 +113,21 @@ html>body>div:first-child{background-color:rgba(0,0,0,0)!important;background-im
 @keyframes dts-fall{0%{transform:translate(-50%,-130vh) scale(.9,.9);opacity:.2}30%{transform:translate(-50%,-4vh) scale(1,1);opacity:1}55%{transform:translate(-50%,0) scale(1.08,.85)}75%{transform:translate(-50%,-8px) scale(.97,1.08)}100%{transform:translate(-50%,0) scale(1,1)}}
 .dts-shadow{position:absolute;left:50%;bottom:4px;width:92px;height:13px;transform:translateX(-50%);border-radius:50%;background:rgba(0,0,0,.35);filter:blur(2px)}
 .dts-pet.dead .dts-shadow{opacity:0}
-.dts-label{position:absolute;top:0;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:'Courier New',monospace;font-size:10px;color:#ffe9b0;text-shadow:0 1px 2px rgba(0,0,0,.9);pointer-events:none}
+.dts-label{position:absolute;top:0;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:'Courier New',monospace;font-size:10px;color:#ffe9b0;text-shadow:0 1px 2px rgba(0,0,0,.9);pointer-events:none;opacity:1;transition:opacity .5s ease}
+.dts-pet.dead .dts-label{opacity:0}
+.dts-pet.fall .dts-label{opacity:0}
 .dts-hint{position:absolute;top:22px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:'Courier New',monospace;font-size:10px;color:#ffe9b0;opacity:0;animation:dts-hint 7s ease-out forwards;text-shadow:0 1px 2px rgba(0,0,0,.9)}
 @keyframes dts-hint{0%,60%{opacity:1}100%{opacity:0}}
-.dts-bag{position:absolute;bottom:14px;left:12px;display:flex;align-items:center;gap:1px;padding:3px 8px 3px 6px;background:rgba(8,12,22,.85);border:1px solid rgba(227,185,60,.8);border-radius:3px;font-family:'Courier New',monospace;font-size:11px;color:#ffe2a0;pointer-events:none;z-index:2}
+/* Right-side loot column (the "empty" area above the pet) */
+.dts-stats{position:absolute;right:26px;bottom:224px;display:flex;flex-direction:column;align-items:flex-end;gap:6px;pointer-events:none;z-index:4}
+.dts-statrow{display:flex;align-items:center;gap:4px;padding:2px 6px 2px 4px;background:rgba(8,12,22,.72);border:1px solid rgba(200,160,80,.55);border-radius:3px;font-family:'Courier New',monospace;font-size:11px;color:#ffe2a0;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.25);backdrop-filter:blur(2px)}
+.dts-statrow img.king{width:20px;height:auto;image-rendering:pixelated;filter:drop-shadow(0 0 3px rgba(255,215,120,.55))}
+.dts-statrow .kills{font-size:12px;font-weight:bold;color:#ffd97a}
+.dts-statrow .coins img{width:13px;height:13px;image-rendering:pixelated}
+.dts-statrow .gelimg{width:14px;height:auto;image-rendering:pixelated}
+.dts-bag{display:flex;align-items:center;gap:1px;background:none;border:none;padding:0}
 .dts-bag img{width:14px;height:14px;image-rendering:pixelated}
-.dts-gel{position:absolute;bottom:14px;left:12px;transform:translateY(-34px);display:flex;align-items:center;gap:2px;padding:2px 7px 2px 5px;background:rgba(8,12,22,.85);border:1px solid rgba(180,220,120,.8);border-radius:3px;font-family:'Courier New',monospace;font-size:11px;color:#d8f4ae;pointer-events:none;z-index:2}
+.dts-gel{display:flex;align-items:center;gap:2px;background:none;border:none;padding:0}
 .dts-gel img{width:14px;height:auto;image-rendering:pixelated}
 /* All in-pet FX are anchored to the pet box, so drops never drift */
 .dts-pop{position:absolute;left:50%;top:36px;width:0;height:0;pointer-events:none;z-index:5}
@@ -134,7 +146,7 @@ const span = (cls: string, style: Record<string, string | number> | null, childr
 const clamp = (v: number, lo: number, hi: number): number => Math.max(lo, Math.min(hi, v))
 const rand = (a: number, b: number): number => a + Math.random() * (b - a)
 
-function WalletChip(props: { cu: number }): unknown {
+function CoinIcons(props: { cu: number }): unknown {
   const g = Math.floor(props.cu / 10000)
   const rem = props.cu % 10000
   const s = Math.floor(rem / 100)
@@ -148,13 +160,31 @@ function WalletChip(props: { cu: number }): unknown {
   if (g > 9) kids.push(createElement('span', { key: 'gx' }, '×' + g))
   if (s > 9) kids.push(createElement('span', { key: 'sx' }, '×' + s))
   if (c > 9) kids.push(createElement('span', { key: 'cx' }, '×' + c))
-  return div('dts-bag', null, kids)
+  return div('dts-coins coins', null, kids)
+}
+
+/** Right-side loot column: King Slime emblem + kill count, wallet, gel. */
+function StatsColumn(props: { kills: number; wallet: number; gels: number }): unknown {
+  const rows: unknown[] = []
+  // Kill count row — King Slime thumbnail as the emblem.
+  rows.push(div('dts-statrow', { key: 'kill' }, [
+    createElement('img', { key: 'k', className: 'king', src: KING, alt: '史莱姆王' }),
+    createElement('span', { key: 'n', className: 'kills' }, '击杀 × ' + props.kills),
+  ]))
+  // Wallet row (coins).
+  rows.push(div('dts-statrow', { key: 'wal' }, [createElement(CoinIcons, { cu: props.wallet, key: 'ci' })]))
+  // Gel row.
+  if (props.gels > 0) {
+    rows.push(div('dts-statrow', { key: 'gel' }, [createElement('img', { key: 'g', className: 'gelimg', src: GEL, alt: '' }), createElement('span', { key: 'gn' }, '× ' + props.gels)]))
+  }
+  return div('dts-stats', null, rows)
 }
 
 function SkinRoot(): unknown {
   const [sp, setSp] = useState(0)
   const [wallet, setWallet] = useState(0)
   const [gels, setGels] = useState(0)
+  const [kills, setKills] = useState(0)
   const [phase, setPhase] = useState<'idle' | 'dead' | 'fall'>('idle')
   const [pop, setPop] = useState<{ id: string; parts: unknown[] } | null>(null)
   const [floatTxt, setFloatTxt] = useState<{ id: string; text: string } | null>(null)
@@ -166,6 +196,7 @@ function SkinRoot(): unknown {
   const kill = (): void => {
     if (phase !== 'idle') return
     setPhase('dead')
+    setKills((k) => k + 1)
     const spec = SPECIES[sp]
     const n = 1 + Math.floor(Math.random() * 3)
     let total = 0
@@ -245,8 +276,7 @@ function SkinRoot(): unknown {
     onContextMenu: onMenu,
     onClick: (): void => kill(),
   }, petKids)]
-  extra.push(createElement(WalletChip, { cu: wallet, key: 'bag' }))
-  if (gels > 0) extra.push(div('dts-gel', { key: 'gel' }, [createElement('img', { src: GEL, alt: '' }), createElement('span', null, '凝胶 × ' + gels)]))
+  extra.push(createElement(StatsColumn, { kills, wallet, gels, key: 'stats' }))
   return div('dts-root', null, extra)
 }
 
