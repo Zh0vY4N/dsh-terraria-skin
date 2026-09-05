@@ -2,3 +2,6 @@ node_modules/
 lib/
 *.log
 .DS_Store
+
+# pnpm 本地缓存（勿提交）
+.npm-cache/
