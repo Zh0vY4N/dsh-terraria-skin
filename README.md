@@ -4,6 +4,8 @@ Terraria-themed skin plugin for the **DSH web GUI**. Unofficial fan theme — sp
 
 > 泰拉瑞亚主题的 DSH 网页端皮肤（非官方粉丝主题）：深色玻璃质感 + 自选壁纸 + 史莱姆宠物生态（击杀→天上刷新，11 个原版物种，右侧史莱姆王击杀统计）。
 
+![dsh-terraria-skin preview](docs/preview.png)
+
 ## What you get
 
 - **Frosted dark skin** — the plugin is *static* (like `@linxin666/dsh-pet`), so it runs with full DOM access: it injects a global stylesheet that maps the whole `--dsw-alias-*` palette onto a translucent dark glass look (cool blue-grey surfaces on top of the wallpaper), and **forces the dark theme** so everyone gets the intended look without touching DSH theme settings (restored on disable).
